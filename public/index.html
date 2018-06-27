@@ -6,17 +6,20 @@
       <title>Learn to make art with CSS</title>
       <link rel='icon' type='image/png' href='./favicon.png' />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js'></script>
     </head>
 
     <body>
       <header id='header'>
-        <h1>CSS in Steps</h1>
-        <div id='menu'>
-          <div>Lessons</div>
-          <div>Reviews</div>
-          <div>Samples</div>
-          <div>Log In</div>
+        <div id='logo'>
+          <img src='./CSS3_logo.svg' alt='CSS3 logo' id='header-img' />
+          <h1>CSS in Steps</h1>
         </div>
+        <nav id='nav-bar'>
+          <a href='#review-bar' class='nav-link'>Reviews</a>
+          <a href='#info-image-one' class='nav-link'>Samples</a>
+          <a href='#get-started' class='nav-link'>Get Started</a>
+        </nav>
       </header>
 
       <main>
@@ -159,7 +162,7 @@
             ></iframe>
           </div>
         </div>
-        <div class='info'>
+        <div class='info' id='info-three'>
           <div class='info-image' id='info-image-three'>
             <div class='image-container'>
               <div id='desk'>
@@ -358,6 +361,11 @@
              &copy; Learning in Steps Inc<br>
              Kingston, Canada
           </p>
+          <form id='form' action="https://www.freecodecamp.com/email-submit">
+            <label>Sign up and get started</label><br>
+            <input type='email' id='email' name='email' placeholder='Enter your email...' required /><br>
+            <input type='submit' id='submit' />
+          </form>
           
         </div>
         <div id='footer-menus'>

@@ -27,10 +27,18 @@ header {
   transition: 0.3s;
   width: 100%;
   z-index: 5;
-  h1 {
-    padding-left: 15px;
+  #logo {
+    display: flex;
+    #header-img {
+      height: 50px;
+      padding-top: 10px;
+      width: 50px;
+    }
+    h1 {
+      padding-left: 25px;
+    }
   }
-  #menu {
+  #nav-bar {
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -38,10 +46,12 @@ header {
     justify-content: space-evenly;
     margin-right: 10px;
     width: 50%;
-    div {
+    a {
+      color: black;
       padding: 5px 10px;
+      text-decoration: none;
     }
-    div:hover {
+    a:hover {
       color: darken(grey, 10%);
     }
   }
@@ -55,6 +65,7 @@ main {
   #landing-image {
     background: linear-gradient(lightBlue, darken($light-blue, 10%));
     height: calc(100vh-80px);
+    position: relative;
     #slogan {
       margin: 0 auto;
       padding-top: 5vh;
@@ -243,44 +254,37 @@ main {
             @-webkit-keyframes tail {
               0% {
                 left: 12vw;
-                top: -2vw;
                 transform: rotate(45deg);
               }
               25% {
                 left: 12.2vw;
-                top: -1.8vw;
                 transform: rotate(55deg);
               }
               75% {
                 left: 11.8vw;
-                top: -2.2vw;
                 transform: rotate(35deg);
               }
               100% {
                 left: 12vw;
-                top: -2vw;
                 transform: rotate(45deg);
               }
             }
             @keyframes tail {
               0% {
                 left: 12vw;
-                top: -2vw;
+                
                 transform: rotate(45deg);
               }
               25% {
                 left: 12.2vw;
-                top: -1.8vw;
                 transform: rotate(55deg);
               }
               75% {
                 left: 11.8vw;
-                top: -2.2vw;
                 transform: rotate(35deg);
               }
               100% {
                 left: 12vw;
-                top: -2vw;
                 transform: rotate(45deg);
               }
             }
@@ -292,6 +296,7 @@ main {
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
             height: 0;
+            top: -16px;
             width: 0;
             z-index: 4;
           }
@@ -305,7 +310,8 @@ main {
     display: flex;
     font-size: 110%;
     justify-content: space-evenly;
-    padding: 25px 10px 40px 10px;
+    margin-top: -80px;
+    padding: 105px 10px 40px 10px;
     text-align: center;
     .review {
       width: 27vw;
@@ -319,6 +325,11 @@ main {
     display: flex;
     font-size: 125%;
     height: 400px;
+    #info-image-one {
+      margin-top: -80px;
+      padding-top: 80px;
+      position: relative;
+    }
     .info-image, .info-text {
       width: 400px;
     }
@@ -547,10 +558,12 @@ main {
       left: 128%;
       transform: rotate(55deg);
     }
+
     #video {
       margin-left: 100px;
     }
 
+    
     /************
     * Workspace *
     ************/
@@ -1093,6 +1106,10 @@ main {
     }
   }
 
+  #info-three {
+    position: relative;
+    z-index: 15;
+  }
   #info-alt {
     background: darken(white, 5%);
   }
@@ -1102,6 +1119,10 @@ main {
     background: #444;
     display: flex;
     height: 400px;
+    margin-top: -80px;
+    padding-top: 80px;
+    position: relative;
+    z-index: 0;
     #get-started-text {
       width: 50%;
       h2, #get-started-section {
@@ -1538,6 +1559,16 @@ footer {
     margin: 0;
     padding-top: 10px;
   }
+  input {
+    margin: 3px 0;
+  }
+  #submit {
+    background: grey;
+    border: none;
+    color: darken(white, 10%);
+    font-size: 125%;
+    padding: 5px 10px;
+  }
   #footer-menus {
     display: flex;
     justify-content: space-between;
@@ -1571,5 +1602,11 @@ footer {
     .fa-google {
       padding: 3px 3px 2px 3px;
     }
+  }
+}
+
+@media (max-width: 992px) {
+  h7 {
+    color: white;
   }
 }
