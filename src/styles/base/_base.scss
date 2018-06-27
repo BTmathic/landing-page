@@ -1,0 +1,1551 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+header {
+  align-items: center;
+  background: lightBlue;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  position: fixed;
+  transition: 0.3s;
+  width: 100vw;
+  z-index: 5;
+  h1 {
+    padding-left: 15px;
+  }
+  #menu {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 140%;
+    justify-content: space-evenly;
+    margin-right: 10px;
+    width: 50%;
+    div {
+      padding: 5px 10px;
+    }
+    div:hover {
+      background: rgba(255,255,255, 0.5);
+      border: 3px solid black;
+      border-radius: 5px;
+      margin: -3px;
+    }
+  }
+}
+
+main {
+  #header-background {
+    background: lightBlue;
+    height: 80px;
+  }
+  #landing-image {
+    background: linear-gradient(lightBlue, darken($light-blue, 10%));
+    height: calc(100vh-80px);
+    #slogan {
+      margin: 0 auto;
+      padding-top: 5vh;
+      text-align: center;
+      width: 50%;
+    }
+    #get-started-button {
+      background: lighten(black, 10%);
+      border-radius: 5px;
+      color: darken(white, 10%);
+      cursor: pointer;
+      font-size: 125%;
+      margin: 0 auto;
+      padding: 10px;
+      text-align: center;
+      width: 200px;
+    }
+    #dog-container {
+      height: 30vw;
+      margin: 5vw auto 0 auto;
+      min-height: 200px;
+      min-width: 300px;
+      padding-bottom: 6vw;
+      position: relative;
+      width: 45vw;
+      #dog-head, #dog-nose, #dog-eye, #dog-pupil, #dog-pupil-glare, #dog-mouth, #dog-mouth-overlay, #dog-tongue,
+      #dog-neck, #dog-ear-left, #dog-ear-right, #dog-body, #dog-front-left-leg, #dog-front-right-leg,
+      #dog-rear-left-leg, #dog-rear-right-leg, #dog-body-back, #dog-body-back-copy, #dog-spot, #dog-spot-overflow, #dog-tail
+       {
+        position: absolute;
+      }
+      #dog-head {
+        background: $dog-colour;
+        border-radius: 0 0 0 30vw;
+        -moz-border-radius: 0 0 0 30vw;
+        -webkit-border-radius: 0 0 0 30vw;
+        height: 12vw;
+        left: 2vw;
+        top: 2vw;
+        width: 12vw;
+        z-index: 1;
+        #dog-nose {
+          background: black;
+          border-radius: 50%;
+          height: 2vw;
+          left: -1vw;
+          top: -1vw;
+          width: 2vw;
+        }
+        #dog-eye {
+          background: darken($dog-colour, 10%);
+          border-radius: 50%;
+          height: 4.5vw;
+          left: 8vw;
+          top: 2vw;
+          width: 4.5vw;
+          #dog-pupil {
+            background: black;
+            border-radius: 50%;
+            height: 2vw;
+            left: 1vw;
+            top: 1vw;
+            width: 2vw;
+            #dog-pupil-glare {
+              background: white;
+              border-radius: 50%;
+              height: 0.8vw;
+              left: 0.5vw;
+              top: 0.3vw;
+              width: 0.8vw;
+            }
+          }
+        }
+        #dog-mouth {
+          background: darken($dog-colour, 20%);
+          border-bottom-right-radius: 3vw;
+          height: 3vw;
+          left: 4vw;
+          top: 6vw;
+          width: 3vw;
+          #dog-mouth-overlay {
+            background: $dog-colour;
+            border-bottom-right-radius: 2.5vw;
+            height: 2.5vw;
+            width: 2.5vw;
+          }
+          #dog-tongue {
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-name: tongue;
+            animation-timing-function: ease;
+            -webkit-animation-duration: 0.3s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-name: tongue;
+            -webkit-animation-timing-function: ease;
+            background: darken(pink, 5%);
+            border-radius: 0 0 50% 50%;
+            height: 2vw;
+            left: -0.5vw;
+            top: 2.5vw;
+            width: 2vw;
+          }
+          @keyframes tongue {
+            0% { height: 2vw; }
+            50% { height: 1vw; }
+            100% {height: 2vw; }
+          }
+          @-webkit-keyframes tongue {
+            0% { height: 2vw; }
+            50% { height: 1vw; }
+            100% {height: 2vw; }
+          }
+        }
+      }
+      #dog-neck {
+        background: $dog-colour;
+        height: 12vw;
+        left: 14vw;
+        top: 2vw;
+        width: 3vw;
+        #dog-ear-left, #dog-ear-right {
+          border-top-left-radius: 50%;
+          height: 3vw;
+          top: -3vw;
+          width: 2vw;
+        }
+        #dog-ear-left {
+          background: $dog-colour;
+          right: 0;
+        }
+        #dog-ear-right {
+          background: darken($dog-colour, 10%);
+          right: 2vw;
+        }
+      }
+      #dog-body {
+        background: $dog-colour;
+        border-bottom-left-radius: 14vw;
+        height: 14vw;
+        left: 14vw;
+        top: 11vw;
+        width: 14vw;
+        #dog-front-left-leg, #dog-front-right-leg, #dog-rear-left-leg, #dog-rear-right-leg {
+          background: $dog-colour;
+          height: 8vw;
+          width: 3vw;
+        }
+        #dog-front-left-leg {
+          left: 3.2vw;
+          top: 9vw;
+        }
+        #dog-front-right-leg {
+          left: 7.2vw;
+          top: 9vw;
+        }
+        #dog-body-back {
+          background: $dog-colour;
+          height: 14vw;
+          left: 14vw;
+          width: 12vw;
+          #dog-body-back-copy {
+            background: $dog-colour;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+          }
+          #dog-spot {
+            background: darken($dog-colour, 10%);
+            border-radius: 0 0 10vw 10vw;
+            height: 5vw;
+            left: -2vw;
+            width: 10vw;
+            z-index: 2;
+          }
+          #dog-rear-left-leg {
+            left: 9vw;
+            top: 9vw;
+          }
+          #dog-rear-right-leg {
+            background: darken($dog-colour, 10%);
+            left: 5vw;
+            top: 9vw;
+            z-index: 0;
+          }
+          #dog-tail {
+            @-webkit-keyframes tail {
+              0% {
+                left: 12vw;
+                top: -2vw;
+                transform: rotate(45deg);
+              }
+              25% {
+                left: 12.2vw;
+                top: -1.8vw;
+                transform: rotate(55deg);
+              }
+              75% {
+                left: 11.8vw;
+                top: -2.2vw;
+                transform: rotate(35deg);
+              }
+              100% {
+                left: 12vw;
+                top: -2vw;
+                transform: rotate(45deg);
+              }
+            }
+            @keyframes tail {
+              0% {
+                left: 12vw;
+                top: -2vw;
+                transform: rotate(45deg);
+              }
+              25% {
+                left: 12.2vw;
+                top: -1.8vw;
+                transform: rotate(55deg);
+              }
+              75% {
+                left: 11.8vw;
+                top: -2.2vw;
+                transform: rotate(35deg);
+              }
+              100% {
+                left: 12vw;
+                top: -2vw;
+                transform: rotate(45deg);
+              }
+            }
+            animation-duration: 0.2s;
+            animation-iteration-count: infinite;
+            animation-name: tail;
+            animation-timing-function: ease;
+            border-bottom: 25px solid $dog-colour;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            height: 0;
+            width: 0;
+            z-index: 4;
+          }
+        }
+      }
+    }
+  }
+
+  #review-bar {
+    background: darken(white, 5%);
+    display: flex;
+    font-size: 110%;
+    justify-content: space-evenly;
+    padding: 25px 10px 40px 10px;
+    text-align: center;
+    .review {
+      width: 27vw;
+    }
+  }
+
+  .info {
+    align-items: center;
+    background: darken(white, 10%);
+    color: darken(grey, 10%);
+    display: flex;
+    font-size: 125%;
+    height: 400px;
+    .info-image, .info-text {
+      width: 400px;
+    }
+    .info-text {
+      margin: 0 auto;
+      text-align: center;
+      width: 25%;
+      .learn-more {
+        cursor: pointer;
+        padding: 10px 0;
+      }
+    }
+    .info-image {
+      align-items: center;
+      display: flex;
+      height: 400px;
+      margin: 0 auto;
+      width: 533px;
+    }
+    .image-container {
+      height: 400px;
+      margin: 0 auto;
+      width: 533px;
+    }
+    /*********
+    * Beaver *
+    *********/
+    #beaver-container {
+      height: 100%;
+      margin: auto;
+      max-height: 400px;
+      max-width: 533px;
+      position: relative;
+      width: 100%;
+    }
+
+    #beaver-body {
+      position: absolute;
+      width: 40%;
+      height: 60%;
+      left: 25%;
+      top: 15%;
+      background: #663300;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
+
+    #beaver-body-copy {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #663300;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      z-index: 1;
+    }
+
+    #left-ear, #right-ear {
+      position: absolute;
+      width: 40%;
+      height: 33%;
+      top: -10%;
+      background: #663300;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #right-ear {
+      right: 0;
+    }
+
+    #left-eye, #right-eye {
+      position: absolute;
+      width: 30%;
+      height: 25%;
+      top: 25%;
+      background: white;
+      border-radius: 50%;
+      z-index: 4;
+    }
+
+    #left-eye {
+      left: 15%;
+    }
+
+    #right-eye {
+      right: 15%;
+    }
+
+    #left-pupil, #right-pupil {
+      position: absolute;
+      width: 55%;
+      height: 55%;
+      top: 38%;
+      background: black;
+      border-radius: 50%;
+      z-index: 5;
+    }
+
+    #left-pupil {
+      left: 38%;
+    }
+
+    #right-pupil {
+      right: 38%;
+    }
+
+    #nose {
+      position: absolute;
+      width: 20%;
+      height: 10%;
+      top: 50%;
+      left: 40%;
+      background: black;
+      border-radius: 50%;
+      z-index: 4;
+  }
+
+    #left-mouth, #right-mouth {
+      position: absolute;
+      width: 30%;
+      height: 25%;
+      top: 40%;
+      background: #663300;
+      border-bottom: 4px black solid;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    #left-mouth {
+      left: 21.5%;
+    }
+
+    #right-mouth {
+      right: 21.5%;
+    }
+
+    #left-tooth, #right-tooth {
+      position: absolute;
+      width: 15%;
+      height: 20%;
+      top: 60%;
+      background: white;
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+      border-radius: 5px;
+      z-index: 2;
+    }
+
+    #left-tooth {
+      left: 33%;
+    }
+
+    #right-tooth {
+      right: 33%;
+    }
+
+    #left-arm, #right-arm {
+      position: absolute;
+      width: 30%;
+      height: 25%;
+      top: 50%;
+      background: #663300;
+    }
+
+    #left-arm {
+      left: -25%;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    #right-arm {
+      right: -25%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+
+    #bottom-body {
+      position: absolute;
+      width: 100%;
+      height: 15%;
+      top: 100%;
+      background: #663300;
+    }
+
+    #tail {
+      position: absolute;
+      height: 150%;
+      width: 50%;
+      top: -50%;
+      left: 100%;
+      background: #331a00;
+      border-top-right-radius: 45%;
+      border-bottom-right-radius: 45%;
+    }
+
+    #left-mark-one, #left-mark-two, #right-mark-one, #right-mark-two {
+      position: absolute;
+      height: 175%;
+      width: 4px;
+      background: black;
+      z-index: 4;
+    }
+
+    #left-mark-one {
+      top: -50%;
+      left: 115%;
+      transform: rotate(-55deg);
+    }
+
+    #left-mark-two {
+      top: -70%;
+      left: 128%;
+      transform: rotate(-55deg);
+    }
+
+    #right-mark-one {
+      top: -75%;
+      left: 115%;
+      transform: rotate(55deg);
+    }
+
+    #right-mark-two {
+      top: -55%;
+      left: 128%;
+      transform: rotate(55deg);
+    }
+    // crows
+
+    /************
+    * Workspace *
+    ************/
+    #desk {
+      background: #AD7A5D;
+      background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #AD7A5D 0%, #AD7A5D 50%) 0 / 15px 15px;
+    }
+
+    .image-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .notepad-container {
+      background: #AD7A5D;
+      background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #AD7A5D 0%, #AD7A5D 50%) 0 / 15px 15px;
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .notepad {
+      position: absolute;
+      width: 80%;
+      height: 70%;
+      top: 20%;
+      left: 10%;
+      background: #FAEFEC;
+      transform: rotate(-10deg);
+    }
+
+    .middle {
+      position: absolute;
+      width: 0.4%;
+      height: 100%;
+      left: 49.8%;
+      background: gray;
+    }
+
+    .left-rule, .right-rule {
+      position: absolute;
+      top: 10%;
+      width: 45%;
+      height: 85%;
+      /*Vertical rule*/
+      background-image: linear-gradient(lightBlue 5%, rgba(155,155,155,0) 5%);
+      background-position: right;
+      background-size: 260px 20px;
+      background-repeat: repeat-y;
+      z-index: 2;
+    }
+
+    .right-rule {
+      left: 50%;
+    }
+
+    .left-holes, .right-holes {
+      position: absolute;
+      top: 3.3%;
+      width: 45%;
+      height: 95%;
+      /*Vertical rule*/
+      background-image: linear-gradient(black 30%, rgba(155,155,155,0) 15%);
+      background-position: right;
+      background-size: 10px 20px;
+      background-repeat: repeat-y;
+      z-index: 2;
+    }
+
+    .left-holes {
+      left: 3%;
+    }
+
+    .right-holes {
+      left: 8%;
+    }
+
+    .top-rings, .bot-rings {
+      position: absolute;
+      width: 45%;
+      height: 95%;
+      left: 7%;
+      /*Vertical rule*/
+      background-image: linear-gradient(gray 6%, rgba(155,155,155,0) 15%);
+      background-position: right;
+      background-size: 30px 20px;
+      background-repeat: repeat-y;
+      z-index: 2;
+    }
+
+    .top-rings {
+      top: 3.4%;
+    }
+
+    .bot-rings {
+      top: 4.1%;
+    }
+
+    .pen {
+      position: absolute;
+      width: 3%;
+      height: 60%;
+      right: 3%;
+      bottom: -5%;
+      background: black; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, black 20%, white, black 50%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, black 20%, white, black 50%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, black 20%, white, black 50%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, black 20%, white, black 50%); /* Standard syntax */
+      border-top-left-radius: 35%;
+      border-top-right-radius: 35%;
+      border-bottom-left-radius: 15%;
+      border-bottom-right-radius: 15%;
+      transform: rotate(10deg);
+      z-index: 2;
+    }
+
+    .pen-middle {
+      position: absolute;
+      height: 10%;
+      width: 110%;
+      top: 55%;
+      left: -5%;
+      background: gray; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, silver 20%, white, gray 50%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, silver 20%, white, gray 50%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, silver 20%, white, gray 50%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, silver 20%, white, gray 50%); /* Standard syntax */
+    }
+
+    .pen-tip {
+      position: absolute;
+      width: 15%;
+      height: 3%;
+      top: -2.5%;
+      left: 48%;
+      background: gray;
+      border-radius: 35%;
+    }
+
+    .pen-top {
+      position: absolute;
+      width: 75%;
+      height: 3%;
+      bottom: -3%;
+      left: 12%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background: gray; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, silver 20%, white, gray 50%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, silver 20%, white, gray 50%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, silver 20%, white, gray 50%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, silver 20%, white, gray 50%); /* Standard syntax */
+    }
+
+    .pen-clip {
+      position: absolute;
+      width: 20%;
+      height: 45%;
+      top: 57%;
+      left: -25%;
+      border-radius: 25%;
+      transform: rotate(-2deg);
+      background: gray; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, silver 20%, white, gray 50%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, silver 20%, white, gray 50%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, silver 20%, white, gray 50%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, silver 20%, white, gray 50%); /* Standard syntax */
+    }
+
+    .pen-clip-top {
+      position: absolute;
+      width: 20%;
+      height: 2%;
+      top: 100%;
+      left: -10%;
+      border-radius: 50%;
+      background: gray; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, silver 20%, white, gray 50%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, silver 20%, white, gray 50%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, silver 20%, white, gray 50%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, gray 20%, gray, white 50%); /* Standard syntax */
+    }
+
+    .crayon {
+      position: absolute;
+      width: 30%;
+      height: 3%;
+      border-top-left-radius: 40%;
+      border-bottom-left-radius: 40%;
+      z-index: 1;
+    }
+
+    .gray {
+      top: -5%;
+      right: 0%;
+      background: gray;
+      transform: rotate(-50deg);
+    }
+
+    .red {
+      top: -8%;
+      right: -8%;
+      background: darkRed;
+      transform: rotate(-48deg);
+    }
+
+    .purple {
+      top: -7.5%;
+      right: -11%;
+      background: purple;
+      transform: rotate(-47deg);
+    }
+
+    .pink {
+      top: -2.5%;
+      right: -12%;
+      background: pink;
+      transform: rotate(-45deg);
+    }
+
+    .blue {
+      top: 3%;
+      right: -14%;
+      background: blue;
+      transform: rotate(-50deg);
+    }
+
+    .lightBlue {
+      top: 10%;
+      right: -20%;
+      background: lightBlue;
+      transform: rotate(-30deg);
+    }
+
+    .green {
+      top: 13.8%;
+      right: -20%;
+      background: green;
+      transform: rotate(-30deg);
+    }
+
+    .fuchsia {
+      top: 17%;
+      right: -23%;
+      background: fuchsia;
+      transform: rotate(-25deg);
+    }
+
+    .lightGreen {
+      top: 25%;
+      right: -21%;
+      background: lightGreen;
+      transform: rotate(-15deg);
+    }
+
+    .maroon {
+      top: 30%;
+      right: -20%;
+      background: maroon;
+      transform: rotate(-10deg);
+    }
+
+    .yellow {
+      top: 34%;
+      right: -19%;
+      background: yellow;
+      transform: rotate(-8deg);
+    }
+
+    .orange {
+      top: 40%;
+      right: -23%;
+      background: #f80;
+      transform: rotate(-4deg);
+    }
+
+    .lightOrange {
+      top: 44%;
+      right: -22%;
+      background: orange;
+      transform: rotate(-1deg);
+    }
+
+    .wrapper {
+      position: absolute;
+      width: 70%;
+      height: 100%;
+      top: 0.5%;
+      left: 23%;
+      border-left: 10px black solid;
+      border-right: 5px black solid;
+      margin-left: -10px;
+    }
+
+    .gray .wrapper {
+      background: darkGray;
+    }
+
+    .red .wrapper {
+      background: red;
+    }
+
+    .purple .wrapper {
+      background: #60c;
+    }
+
+    .pink .wrapper {
+      background: #f6f;
+    }
+
+    .blue .wrapper {
+      background: #003;
+    }
+
+    .lightBlue .wrapper {
+      background: #3cf;
+    }
+
+    .green .wrapper {
+      background: #030;
+    }
+
+    .fuchsia .wrapper {
+      background: #800060;
+    }
+
+    .lightGreen .wrapper {
+      background: #090;
+    }
+
+    .maroon .wrapper {
+      background: #300;
+    }
+
+    .yellow .wrapper {
+      background: #aa0;
+    }
+
+    .orange .wrapper {
+      background: #b36b00;
+    }
+
+    .lightOrange .wrapper {
+      background: #e68a00;
+    }
+
+    .paint {
+      position: absolute;
+      width: 15%;
+      height: 18.7%;
+      border-radius: 50%;
+      border: 4px solid gray;
+    }
+
+    .p-red {
+      top: -10%;
+      background: red; /* For browsers that do not support gradients */
+      /* Safari 5.1 to 6.0 */
+      background: -webkit-radial-gradient(60% 55%, closest-side, #cc2900, red, #ff471a 150%);
+      /* For Opera 11.6 to 12.0 */
+      background: -o-radial-gradient(60% 55%, closest-side, #cc2900, red, #ff471a 150%);
+      /* For Firefox 3.6 to 15 */
+      background: -moz-radial-gradient(60% 55%, closest-side, #cc2900, red, #ff471a 150%);
+      /* Standard syntax */
+      background: radial-gradient(closest-side at 60% 55%, #cc2900, red, #ff471a 150%);
+    }
+
+    .p-orange {
+      top: 6%;
+      left: 10%;
+      background: darkOrange; /* For browsers that do not support gradients */
+      /* Safari 5.1 to 6.0 */
+      background: -webkit-radial-gradient(60% 55%, farthest-side, #ffb84d, #ffad33, #ffa31a, #ff9900, #e68a00);
+      /* For Opera 11.6 to 12.0 */
+      background: -o-radial-gradient(60% 55%, farthest-side, #ffb84d, #ffad33, #ffa31a, #ff9900, #e68a00);
+      /* For Firefox 3.6 to 15 */
+      background: -moz-radial-gradient(60% 55%, farthest-side, #ffb84d, #ffad33, #ffa31a, #ff9900, #e68a00);
+      /* Standard syntax */
+      background: radial-gradient(farthest-side at 60% 55%, #ffb84d, #ffad33, #ffa31a, #ff9900, #e68a00);
+    }
+
+    .p-purple {
+      top: -2%;
+      left: 45%;
+      background: #60c; /* For browsers that do not support gradients */
+      /* Safari 5.1 to 6.0 */
+      background: -webkit-radial-gradient(60% 55%, closest-side, #5c00e6, #60c, #751aff 170%);
+      /* For Opera 11.6 to 12.0 */
+      background: -o-radial-gradient(60% 55%, closest-side, #5c00e6, #60c, #751aff 170%);
+      /* For Firefox 3.6 to 15 */
+      background: -moz-radial-gradient(60% 55%, closest-side, #5c00e6, #60c, #751aff 170%);
+      /* Standard syntax */
+      background: radial-gradient(closest-side at 60% 55%, #5c00e6, #60c, #751aff 170%);
+    }
+
+    .p-yellow {
+      top: -8%;
+      left: 61%;
+      background: yellow; /* For browsers that do not support gradients */
+      /* Safari 5.1 to 6.0 */
+      background: -webkit-radial-gradient(60% 55%, closest-side, #ffff33, yellow, #cccc00 120%);
+      /* For Opera 11.6 to 12.0 */
+      background: -o-radial-gradient(60% 55%, closest-side, #ffff33, yellow, #cccc00 120%);
+      /* For Firefox 3.6 to 15 */
+      background: -moz-radial-gradient(60% 55%, closest-side, #ffff33, yellow, #cccc00 120%);
+      /* Standard syntax */
+      background: radial-gradient(closest-side at 60% 55%, #ffff33, yellow, #cccc00 120%);
+    }
+
+    .p-green {
+      top: -19%;
+      left: 36%;
+      background: green;
+    }
+
+    .p-blue {
+      top: -2%;
+      left: 26%;
+      background: blue; /* For browsers that do not support gradients */
+      /* Safari 5.1 to 6.0 */
+      background: -webkit-radial-gradient(60% 55%, closest-side, #000099, blue, #0000cc 130%);
+      /* For Opera 11.6 to 12.0 */
+      background: -o-radial-gradient(60% 55%, closest-side, #000099, blue, #0000cc 130%);
+      /* For Firefox 3.6 to 15 */
+      background: -moz-radial-gradient(60% 55%, closest-side, #000099, blue, #0000cc 130%);
+      /* Standard syntax */
+      background: radial-gradient(closest-side at 60% 55%, #000099, blue, #0000cc 130%);
+    }
+
+    .paint-brush {
+      position: absolute;
+      width: 1%;
+      height: 10%;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 500px solid brown;
+      border-radius: 20%;
+    }
+
+    .brush-overlay {
+      position: absolute;
+      width: 380%;
+      height: 50%;
+      top: 910%;
+      left: -138%;
+      background: silver;
+    }
+
+    .brush {
+      position: absolute;
+      width: 380%;
+      height: 120%;
+      top: 955%;
+      left: -138%;
+      border-bottom-left-radius: 25%;
+      border-bottom-right-radius: 25%;
+      background: repeating-linear-gradient(to right, #D1A449 20%, #D3C16D 30%); /* Standard syntax */
+    }
+
+    .brush-one {
+      top: -40%;
+      left: -10%;
+      transform: rotate(-10deg);
+    }
+
+    .brush-two {
+      top: -50%;
+      left: -15%;
+      transform: rotate(-5deg);
+    }
+
+    .brush-three {
+      top: -30%;
+      left: -25%;
+      transform: rotate(-10deg);
+    }
+
+    .pencil {
+      position: absolute;
+      width: 65%;
+      height: 4%;
+      top: 90%;
+      left: 50%;
+      border-right: 30px solid transparent;
+      transform: rotate(-5deg);
+      background: #FB911B; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(#FAB120 30%, #FA921B 30%, #AC5B12 70%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#FAB120 30%, #FA921B 30%, #AC5B12 70%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#FAB120 30%, #FA921B 30%, #AC5B12 70%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#FAB120 30%, #FA921B 30%, #AC5B12 70%); /* Standard syntax */
+    }
+
+    .pencil-tip {
+      position: absolute; 
+      height: 17.1%;
+      left: -5.7%;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent; 
+      border-right:30px solid #E1C2A2;
+    }
+
+    .lead {
+      position: absolute; 
+      height: 5%;
+      top: 38%;
+      left: -6.8%;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent; 
+      border-right: 8px solid black;
+    }
+
+    .pencil-top {
+      position: absolute;
+      width: 5%;
+      height: 100%;
+      top: 0%;
+      left: 100.5%;
+      background: silver; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(silver 30%, #C4C3BE 30%, gray 70%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(silver 30%, #C4C3BE 30%, gray 70%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(silver 30%, #C4C3BE 30%, gray 70%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(silver 30%, #C4C3BE 30%, gray 70%); /* Standard syntax */
+    }
+
+    .eraser {
+      position: absolute;
+      width: 3%;
+      height: 100%;
+      right: -8.5%;
+      border-top-right-radius: 25%;
+      border-bottom-right-radius: 25%;
+      background: #F40010; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(#F40010 30%, #F00013 30%, #981216 70%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#F40010 30%, #F00013 30%, #981216 70%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#F40010 30%, #F00013 30%, #981216 70%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F40010 30%, #F00013 30%, #981216 70%); /* Standard syntax */
+    }
+  }
+
+  #info-alt {
+    background: darken(white, 5%);
+  }
+
+  #get-started {
+    align-items: center;
+    background: #444;
+    display: flex;
+    height: 400px;
+    #get-started-text {
+      width: 50%;
+      h2, #get-started-section {
+        text-align: center;
+      }
+      h2 {
+        color: darken(white, 10%);
+        margin-top: 0;
+        padding-top: 10px;
+      }
+      #get-started-section {
+        display: flex;
+        font-size: 125%;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+        .get-started-section-button {
+          background: rgba(255,255,255, 0.5);
+          border-radius: 5px;
+          color: darken(white, 10%);
+          cursor: pointer;
+          padding: 10px;
+        }
+      }
+    }
+    #get-started-image {
+      align-items: center;
+      display: flex;
+      /************
+      * Wolverine *
+      ************/
+      .image-container {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        margin: 50px auto;
+      }
+
+      #wolverine {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+      }
+
+      #wolverine-body {
+        position: absolute;
+        width: 50%;
+        height: 40%;
+        top: 20%;
+        left: 30%;
+        background: #FFCE5A; /* for browsers that do not support gradients */
+        background: linear-gradient(#FFCE5A, #B56321);
+        border-radius: 10% 10% 50% 50%;
+        transform: rotate(30deg);
+      }
+
+      #wolverine-body-copy {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #FFCE5A; /* for browsers that do not support gradients */
+        background: linear-gradient(#FFCE5A, #B56321);
+        border-radius: 10% 10% 50% 50% / 10% 10% 40% 40%;
+        z-index: 1;
+      }
+
+      #wolverine-body-copy:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: linear-gradient(to right, #10527B 25%, transparent 30%, transparent 50%, transparent 70%, #10527B 75%);
+        border-radius: inherit;
+      }
+
+      #wolverine-body-copy:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(white, transparent 5%);
+        box-shadow: 0px 2px 2px white;
+      }
+
+      #wolverine-head {
+        position: absolute;
+        width: 40%;
+        height: 90%;
+        top: -5%;
+        left: 30%;
+        border-radius: 50%;
+        background: #E6B58C;
+        z-index: 2;
+      }
+
+      #wolverine-head-copy {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: inherit;
+      }
+
+      #wolverine-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(to top, transparent 50%, #FFB53A 50%);
+      }
+
+      #wolverine-left-eye-cover, #wolverine-right-eye-cover {
+        position: absolute;
+        width: 60%;
+        height: 15%;
+        top: 40%;
+        background: #002131;
+      }
+
+      #wolverine-left-eye-cover {
+        left: -10%;
+        border-bottom-left-radius: 50%;
+        transform: rotate(25deg);
+      }
+
+      #wolverine-right-eye-cover {
+        right: -10%;
+        transform: rotateY(180deg) rotate(25deg);
+        border-bottom-left-radius: 50%;
+      }
+
+      .wolverine-cover-tip {
+        position: absolute;
+        width: 20%;
+        height: 500%;
+        top: -150%;
+        left: 6%;
+        background: green; /* for broswers that do not support gradients */
+        background: linear-gradient(to right, #94CEEF, #1973AD, #002131 50%);
+        border-radius: 50%;
+        transform: rotate(-40deg);
+        
+        width: 10%;
+        left: 13%;
+        transform: rotate(-37deg);
+      }
+
+      .wolverine-eye {
+        position: absolute;
+        width: 40%;
+        height: 30%;
+        top: 15%;
+        right: 15%;
+        background: white;
+        border-radius: 50% 50% 50% 50%;
+      }
+
+      #wolverine-nose {
+        position: absolute;
+        width: 16%;
+        height: 21%;
+        top: 46%;
+        left: 42%;
+        background: #FFB53A;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+
+      #wolverine-teeth {
+        position: absolute;
+        width: 40%;
+        height: 10%;
+        top: 75%;
+        left: 30%;
+        border-radius: 40%;
+        background: white;
+        z-index: 2;
+      }
+
+      #wolverine-left-arm, #wolverine-right-arm {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 10%;
+        background: #EFCEAD;
+        border-radius: 20% 0 0 20%;
+        z-index: 1;
+      }
+
+      #wolverine-left-arm {
+        left: -45%;
+        transform: rotate(-10deg);
+      }
+
+      #wolverine-right-arm {
+        right: -45%;
+        transform: rotateY(180deg) rotate(-10deg);
+      }
+
+      #wolverine-left-arm:before, #wolverine-right-arm:before {
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 130%;
+        top: -14%;
+        right: -8%;
+        background: #10527B; /* for browsers that do not support gradients */
+        background: linear-gradient(white, #10527B 5%, black, #10527B);
+        transform: rotate(15deg);
+        z-index: 2;
+      }
+
+      #wolverine-left-arm:after, #wolverine-right-arm:after {
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        top: -15%;
+        right: -2%;
+        background: #212931;
+        border-top: 2px solid white;
+        border-radius: 50%;
+        transform: rotate(-15deg);
+      }
+
+      #wolverine-left-arm-copy, #wolverine-right-arm-copy {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        border-radius: inherit;
+        z-index: 1;
+      }
+
+      .wolverine-hand {
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        top: -5%;
+        left: -30%;
+        background: #73ADD6; /* for browsers that do not support gradients */
+        background: linear-gradient(to right, #73ADD6, black);
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index, .wolverine-palm, .wolverine-thumb, .wolverine-thumb-tip {
+        position: absolute;
+        width: 28%;
+        background: #217BB5; /* for browsers that do not support gradients */
+        background: radial-gradient(#217BB5, #104A6B);
+        border-radius: 30%;
+      }
+
+      .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index {
+        transform: rotate(-20deg);
+        z-index: 1;
+      }
+
+      .wolverine-pinky {
+        height: 75%;
+        top: 15%;
+        left: -10%;
+      }
+
+      .wolverine-ring {
+        height: 78%;
+        top: 1%;
+        left: 10%;
+      }
+
+      .wolverine-middle {
+        height: 80%;
+        top: -12%;
+        left: 31%;
+      }
+
+      .wolverine-index {
+        height: 73%;
+        top: -15%;
+        left: 54%;
+      }
+
+      .wolverine-palm {
+        height: 73%;
+        top: -25%;
+        left: 70%;
+        transform: rotate(-55deg);
+      }
+
+      .wolverine-thumb {
+        height: 50%;
+        top: 15%;
+        left: 83%;
+        transform: rotate(35deg);
+        z-index: 1;
+      }
+
+      .wolverine-thumb-tip {
+        height: 50%;
+        top: 37%;
+        left: 55%;
+        transform: rotate(65deg);
+        z-index: 2;
+      }
+
+      .wolverine-thumb-tip:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 30%;
+        top: -5%;
+        left: -5%;
+        background: #217BB5; /* for browsers that do not support gradients */
+        background: linear-gradient(to right, #104A6B, #217BB5 40%, #104A6B 95%);
+        border-radius: 30%;
+        transform: rotate(-20deg);
+      }
+
+      .wolverine-outer-blade, .wolverine-middle-blade, .wolverine-inner-blade {
+        position: absolute;
+        height: 40%;
+        border-top: 10px solid #E6EFE6;
+        border-radius: 50%;
+      }
+
+      .wolverine-outer-blade {
+        width: 100%;
+        top: 12%;
+        left: -85%;
+        transform: rotate(-20deg) rotateY(-15deg);
+      }
+
+      .wolverine-middle-blade {
+        width: 200%;
+        height: 70%;
+        top: -12%;
+        left: -120%;
+        transform: rotateY(45deg);
+      }
+
+      .wolverine-inner-blade {
+        width: 80%;
+        height: 50%;
+        top: -35%;
+        left: -25%;
+        transform: rotate(20deg) rotateY(-30deg);
+      }
+        
+      #wolverine-leg {
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        top: 80%;
+        left: 50%;
+        background: #FFCE5A; /* for browsers that do not support gradients */
+        background: radial-gradient(#FFCE5A, #B56321);
+        border-radius: 0 0 30% 30%;
+        box-shadow: 0px 2px 5px white;
+        z-index: 0;
+      }
+
+      #wolverine-leg:after {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        left: 30%;
+        background: linear-gradient(to top right, transparent 45%, #10527B 60%);
+      }
+
+      #wolverine-foot {
+        position: absolute;
+        width: 12%;
+        height: 35%;
+        top: -35%;
+        left: 38%;
+        background: #10527B; /* for broswers without gradient support */
+        background: linear-gradient(to right, #D6EFF7, #10528B, #10528B, #D6EFF7);
+        border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+      }
+
+      #wolverine-foot:before, #wolverine-foot:after {
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 90%;
+        top: 10%;
+        background: #425263;
+        border-top-left-radius: inherit;
+      }
+
+      #wolverine-foot:before {
+        left: 35%;
+      }
+
+      #wolverine-foot:after {
+        right: 35%;
+      }
+
+      #wolverine-heel-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 10%;
+        border-top: 2px solid #425263;
+        border-radius: inherit;
+      }
+
+      #wolverine-shoe {
+        position: absolute;
+        width: 10%;
+        height: 33%;
+        top: 140%;
+        left: 72%;
+        background: #10527B;
+        border-radius: 0 30% 50% 0;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+footer {
+  background: darken(white, 5%);
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5%;
+  h2 {
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  #footer-menus {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        cursor: pointer;
+        margin: 5px 0;
+      }
+    }
+  }
+}
