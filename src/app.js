@@ -10,3 +10,9 @@ window.onscroll = function(e) {
   }
 }
 
+let landingImageHeight = document.getElementById('landing-image').offsetHeight;
+let landingImageHeaderHeight = document.getElementById('slogan').offsetHeight;
+let landingImageButtonHeight = document.getElementById('get-started-button').offsetHeight;
+let landingImageDogContainer = document.getElementById('dog-container-container');
+
+landingImageDogContainer.style.height = landingImageHeight - landingImageHeaderHeight - landingImageButtonHeight + 'px';
