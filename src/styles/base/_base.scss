@@ -16,12 +16,18 @@ button:disabled {
     cursor: default;
 }
 
+.content-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
 header {
   background: lightBlue;
+  font-size: 1.2rem;
   height: 80px;
   position: fixed;
   transition: 0.3s;
-  width: 100%;
+  width: 100vw;
   z-index: 5;
   #header-contents {
     align-items: center;
@@ -63,13 +69,16 @@ header {
 
 main {
   #header-background {
-    background: lightBlue;
     height: 80px;
   }
   #landing-image {
     background: linear-gradient(lightBlue, darken($light-blue, 10%));
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     #slogan {
       margin: 0 auto;
       max-width: 400px;
@@ -82,232 +91,227 @@ main {
       border-radius: 5px;
       color: darken(white, 10%);
       cursor: pointer;
-      font-size: 125%;
       margin: 0 auto;
       padding: 10px;
       text-align: center;
       width: 200px;
     }
-    #dog-container-container {
-      align-items: center;
-      display: flex;
-      #dog-container {
-        height: 45vw;
-        margin: 20px auto 0;
-        max-height: 500px;
-        max-width: 500px;
-        min-height: 300px;
-        min-width: 300px;
-        position: relative;
-        width: 45vw;
-        #dog-head, #dog-nose, #dog-eye, #dog-pupil, #dog-pupil-glare, #dog-mouth, #dog-mouth-overlay, #dog-tongue,
-        #dog-neck, #dog-ear-left, #dog-ear-right, #dog-body, #dog-front-left-leg, #dog-front-right-leg,
-        #dog-rear-left-leg, #dog-rear-right-leg, #dog-body-back, #dog-body-back-copy, #dog-spot, #dog-spot-overflow, #dog-tail
-        {
-          position: absolute;
+    #dog-container {
+      height: 45vw;
+      margin: 20px auto 0;
+      max-height: 500px;
+      max-width: 500px;
+      min-height: 300px;
+      min-width: 300px;
+      position: relative;
+      width: 45vw;
+      #dog-head, #dog-nose, #dog-eye, #dog-pupil, #dog-pupil-glare, #dog-mouth, #dog-mouth-overlay, #dog-tongue,
+      #dog-neck, #dog-ear-left, #dog-ear-right, #dog-body, #dog-front-left-leg, #dog-front-right-leg,
+      #dog-rear-left-leg, #dog-rear-right-leg, #dog-body-back, #dog-body-back-copy, #dog-spot, #dog-spot-overflow, #dog-tail
+      {
+        position: absolute;
+      }
+      #dog-head {
+        background: $dog-colour;
+        border-radius: 0 0 0 30vw;
+        -moz-border-radius: 0 0 0 30vw;
+        -webkit-border-radius: 0 0 0 30vw;
+        height: 30%;
+        left: 5%;
+        top: 25%;
+        width: 30%;
+        z-index: 1;
+        #dog-nose {
+          background: black;
+          border-radius: 50%;
+          height: 15%;
+          left: -8%;
+          top: -6%;
+          width: 15%;
         }
-        #dog-head {
-          background: $dog-colour;
-          border-radius: 0 0 0 30vw;
-          -moz-border-radius: 0 0 0 30vw;
-          -webkit-border-radius: 0 0 0 30vw;
+        #dog-eye {
+          background: darken($dog-colour, 10%);
+          border-radius: 50%;
           height: 30%;
-          left: 5%;
-          top: 25%;
+          left: 68%;
+          top: 8%;
           width: 30%;
-          z-index: 1;
-          #dog-nose {
+          #dog-pupil {
             background: black;
             border-radius: 50%;
-            height: 15%;
-            left: -8%;
-            top: -6%;
-            width: 15%;
-          }
-          #dog-eye {
-            background: darken($dog-colour, 10%);
-            border-radius: 50%;
-            height: 30%;
-            left: 68%;
-            top: 8%;
-            width: 30%;
-            #dog-pupil {
-              background: black;
+            height: 50%;
+            left: 20%;
+            top: 20%;
+            width: 50%;
+            #dog-pupil-glare {
+              background: white;
               border-radius: 50%;
-              height: 50%;
-              left: 20%;
-              top: 20%;
-              width: 50%;
-              #dog-pupil-glare {
-                background: white;
-                border-radius: 50%;
-                height: 40%;
-                left: 15%;
-                top: 15%;
-                width: 40%;
-              }
-            }
-          }
-          #dog-mouth {
-            background: darken($dog-colour, 20%);
-            border-bottom-right-radius: 3vw;
-            height: 25%;
-            left: 33%;
-            top: 50%;
-            width: 25%;
-            #dog-mouth-overlay {
-              background: $dog-colour;
-              border-bottom-right-radius: 2.5vw;
-              height: 85%;
-              width: 85%;
-            }
-            #dog-tongue {
-              animation-duration: 0.3s;
-              animation-iteration-count: infinite;
-              animation-name: tongue;
-              animation-timing-function: ease;
-              -webkit-animation-duration: 0.3s;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-name: tongue;
-              -webkit-animation-timing-function: ease;
-              background: darken(pink, 5%);
-              border-radius: 0 0 50% 50%;
-              height: 20%;
-              left: -12%;
-              top: 85%;
-              width: 60%;
-            }
-            @keyframes tongue {
-              0% { height: 70%; }
-              50% { height: 40%; }
-              100% {height: 70%; }
-            }
-            @-webkit-keyframes tongue {
-              0% { height: 70%; }
-              50% { height: 40%; }
-              100% {height: 70%; }
+              height: 40%;
+              left: 15%;
+              top: 15%;
+              width: 40%;
             }
           }
         }
-        #dog-neck {
-          background: $dog-colour;
-          height: 30%;
+        #dog-mouth {
+          background: darken($dog-colour, 20%);
+          border-bottom-right-radius: 3vw;
+          height: 25%;
           left: 33%;
-          top: 25%;
-          width: 7%;
-          #dog-ear-left, #dog-ear-right {
-            border-top-left-radius: 50%;
-            height: 30%;
-            top: -25%;
-            width: 80%;
-          }
-          #dog-ear-left {
+          top: 50%;
+          width: 25%;
+          #dog-mouth-overlay {
             background: $dog-colour;
-            right: 0;
+            border-bottom-right-radius: 2.5vw;
+            height: 85%;
+            width: 85%;
           }
-          #dog-ear-right {
-            background: darken($dog-colour, 10%);
-            right: 90%;
+          #dog-tongue {
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-name: tongue;
+            animation-timing-function: ease;
+            -webkit-animation-duration: 0.3s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-name: tongue;
+            -webkit-animation-timing-function: ease;
+            background: darken(pink, 5%);
+            border-radius: 0 0 50% 50%;
+            height: 20%;
+            left: -12%;
+            top: 85%;
+            width: 60%;
+          }
+          @keyframes tongue {
+            0% { height: 70%; }
+            50% { height: 40%; }
+            100% {height: 70%; }
+          }
+          @-webkit-keyframes tongue {
+            0% { height: 70%; }
+            50% { height: 40%; }
+            100% {height: 70%; }
           }
         }
-        #dog-body {
-          background: $dog-colour;
-          border-bottom-left-radius: 14vw;
+      }
+      #dog-neck {
+        background: $dog-colour;
+        height: 30%;
+        left: 33%;
+        top: 25%;
+        width: 7%;
+        #dog-ear-left, #dog-ear-right {
+          border-top-left-radius: 50%;
           height: 30%;
-          left: 33%;
-          top: 43%;
-          width: 40%;
-          #dog-front-left-leg, #dog-front-right-leg, #dog-rear-left-leg, #dog-rear-right-leg {
-            background: $dog-colour;
-            height: 60%;
-            top: 60%;
-          }
-          #dog-front-left-leg {
-            left: 24%;
-            width: 15%;
-          }
-          #dog-front-right-leg {
-            left: 45%;
-            width: 15%;
-          }
-          #dog-body-back {
+          top: -25%;
+          width: 80%;
+        }
+        #dog-ear-left {
+          background: $dog-colour;
+          right: 0;
+        }
+        #dog-ear-right {
+          background: darken($dog-colour, 10%);
+          right: 90%;
+        }
+      }
+      #dog-body {
+        background: $dog-colour;
+        border-bottom-left-radius: 14vw;
+        height: 30%;
+        left: 33%;
+        top: 43%;
+        width: 40%;
+        #dog-front-left-leg, #dog-front-right-leg, #dog-rear-left-leg, #dog-rear-right-leg {
+          background: $dog-colour;
+          height: 60%;
+          top: 60%;
+        }
+        #dog-front-left-leg {
+          left: 24%;
+          width: 15%;
+        }
+        #dog-front-right-leg {
+          left: 45%;
+          width: 15%;
+        }
+        #dog-body-back {
+          background: $dog-colour;
+          height: 100%;
+          left: 100%;
+          width: 35%;
+          #dog-body-back-copy {
             background: $dog-colour;
             height: 100%;
-            left: 100%;
-            width: 35%;
-            #dog-body-back-copy {
-              background: $dog-colour;
-              height: 100%;
-              width: 100%;
-              z-index: 2;
-            }
-            #dog-spot {
-              background: darken($dog-colour, 10%);
-              border-radius: 0 0 65% 65% / 0 0 130% 130%;
-              height: 30%;
-              left: -100%;
-              width: 130%;
-              z-index: 2;
-            }
-            #dog-rear-left-leg {
-              right: 0;
-              width: 40%;
-            }
-            #dog-rear-right-leg {
-              background: darken($dog-colour, 10%);
-              left: 3%;
-              width: 40%;
-              z-index: 0;
-            }
-            #dog-tail {
-              @-webkit-keyframes tail {
-                0% {
-                  right: -15%;
-                  transform: rotate(45deg);
-                }
-                25% {
-                  right: -16%;
-                  transform: rotate(55deg);
-                }
-                75% {
-                  right: -14%;
-                  transform: rotate(35deg);
-                }
-                100% {
-                  right: -15%;
-                  transform: rotate(45deg);
-                }
+            width: 100%;
+            z-index: 2;
+          }
+          #dog-spot {
+            background: darken($dog-colour, 10%);
+            border-radius: 0 0 65% 65% / 0 0 130% 130%;
+            height: 30%;
+            left: -100%;
+            width: 130%;
+            z-index: 2;
+          }
+          #dog-rear-left-leg {
+            right: 0;
+            width: 40%;
+          }
+          #dog-rear-right-leg {
+            background: darken($dog-colour, 10%);
+            left: 3%;
+            width: 40%;
+            z-index: 0;
+          }
+          #dog-tail {
+            @-webkit-keyframes tail {
+              0% {
+                right: -15%;
+                transform: rotate(45deg);
               }
-              @keyframes tail {
-                0% {
-                  right: -15%;
-                  transform: rotate(45deg);
-                }
-                25% {
-                  right: -16%;
-                  transform: rotate(55deg);
-                }
-                75% {
-                  right: -14%;
-                  transform: rotate(35deg);
-                }
-                100% {
-                  right: -15%;
-                  transform: rotate(45deg);
-                }
+              25% {
+                right: -16%;
+                transform: rotate(55deg);
               }
-              animation-duration: 0.2s;
-              animation-iteration-count: infinite;
-              animation-name: tail;
-              animation-timing-function: ease;
-              border-bottom: 35px solid $dog-colour;
-              border-left: 8px solid transparent;
-              border-right: 8px solid transparent;
-              height: 0;
-              top: -14%;
-              width: 0;
-              z-index: 4;
+              75% {
+                right: -14%;
+                transform: rotate(35deg);
+              }
+              100% {
+                right: -15%;
+                transform: rotate(45deg);
+              }
             }
+            @keyframes tail {
+              0% {
+                right: -15%;
+                transform: rotate(45deg);
+              }
+              25% {
+                right: -16%;
+                transform: rotate(55deg);
+              }
+              75% {
+                right: -14%;
+                transform: rotate(35deg);
+              }
+              100% {
+                right: -15%;
+                transform: rotate(45deg);
+              }
+            }
+            animation-duration: 0.2s;
+            animation-iteration-count: infinite;
+            animation-name: tail;
+            animation-timing-function: ease;
+            border-bottom: 35px solid $dog-colour;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            height: 0;
+            top: -14%;
+            width: 0;
+            z-index: 4;
           }
         }
       }
@@ -351,14 +355,17 @@ main {
     }
     #info-image-two {
       height: 400px;
+      iframe {
+        height: 180;
+        width: 320;
+      }
     }
     .info-text {
-      padding: 0 20px;
       text-align: center;
-      width: 400px;
+      max-width: 400px;
       .info-snippet {
         margin: 0 auto;
-        width: 300px;
+        max-width: 300px;
       }
       .learn-more {
         color: darken(grey, 20%);
@@ -371,18 +378,12 @@ main {
         color: darken(grey, 40%);
       }
     }
-    .info-image {
-      align-items: center;
-      display: flex;
-      margin: 0 auto;
-      width: 80%;
-    }
     .image-container {
       align-items: center;
       display: flex;
       height: 400px;
       margin: 0 auto;
-      width: 90%;
+      //width: 90%;
     }
     /*********
     * Beaver *
@@ -392,6 +393,7 @@ main {
       margin: auto;
       max-height: 300px;
       max-width: 400px;
+      min-width: 330px;
       position: relative;
       width: 100%;
     }
@@ -559,32 +561,32 @@ main {
 
     #left-mark-one, #left-mark-two, #right-mark-one, #right-mark-two {
       position: absolute;
-      height: 175%;
+      height: 150%;
       width: 4px;
       background: black;
       z-index: 4;
     }
 
     #left-mark-one {
-      top: -50%;
+      top: -40%;
       left: 115%;
       transform: rotate(-55deg);
     }
 
     #left-mark-two {
-      top: -70%;
+      top: -60%;
       left: 128%;
       transform: rotate(-55deg);
     }
 
     #right-mark-one {
-      top: -75%;
+      top: -65%;
       left: 115%;
       transform: rotate(55deg);
     }
 
     #right-mark-two {
-      top: -55%;
+      top: -45%;
       left: 128%;
       transform: rotate(55deg);
     }
@@ -609,8 +611,8 @@ main {
       background: #AD7A5D;
       background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #AD7A5D 0%, #AD7A5D 50%) 0 / 15px 15px;
       position: relative;
-      width: 360px;
-      height: 300px;
+      width: 270px;
+      height: 225px;
       margin: 0 auto;
       overflow: hidden;
     }
@@ -1164,7 +1166,7 @@ main {
     position: relative;
     z-index: 0;
     #get-started-text {
-      width: 50%;
+      width: 100%;
       h2, #get-started-section {
         text-align: center;
       }
@@ -1204,8 +1206,8 @@ main {
         align-items: center;
         display: flex;
         position: relative;
-        width: 480px;
-        height: 360px;
+        width: 360px;
+        height: 270px;
         margin: 50px auto;
       }
 
@@ -1621,7 +1623,9 @@ footer {
     }
     #footer-left {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+      margin: 0 auto;
       max-width: 500px;
       form {
         padding-top: 15px;
@@ -1636,10 +1640,10 @@ footer {
     }
     #footer-menus {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      margin-right: 5%;
+      margin: 0 auto;
       max-width: 600px;
-      width: 95%;
       ul {
         list-style-type: none;
         padding: 0;
@@ -1672,6 +1676,20 @@ footer {
       }
       .fa-google {
         padding: 3px 3px 2px 3px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  footer {
+    #footer-contents {
+      #footer-left, #footer-menus {
+        flex-direction: row;
+        margin: auto;
+      }
+      #footer-menus {
+        width: 80%;
       }
     }
   }
@@ -1717,6 +1735,10 @@ footer {
               max-width: 533px;
               width: 480px;
             }
+          }
+          iframe {
+            height: 236px;
+            width: 420px;
           }
         }
       }
