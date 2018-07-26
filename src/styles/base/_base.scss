@@ -339,13 +339,16 @@ main {
 
   .info {
     background: darken(white, 10%);
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 500px;
     .info-contents {
-      align-items: center;
       color: darken(grey, 10%);
       display: flex;
       flex-direction: column;
       font-size: 125%;
+      justify-content: space-around;
       max-width: 1000px;
     }
     #info-image-one {
@@ -354,15 +357,21 @@ main {
       position: relative;
     }
     #info-image-two {
-      height: 400px;
+      align-items: center;
+      display: flex;
       iframe {
-        height: 180;
-        width: 320;
+        max-width: 420px;
+        width: 100%;
       }
     }
     .info-text {
-      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 0 auto;
       max-width: 400px;
+      text-align: center;
       .info-snippet {
         margin: 0 auto;
         max-width: 300px;
@@ -379,19 +388,14 @@ main {
       }
     }
     .image-container {
-      align-items: center;
-      display: flex;
-      height: 400px;
       margin: 0 auto;
-      //width: 90%;
     }
     /*********
     * Beaver *
     *********/
     #beaver-container {
-      height: 100%;
-      margin: auto;
-      max-height: 300px;
+      margin: 0 auto;
+      height: 300px;
       max-width: 400px;
       min-width: 330px;
       position: relative;
@@ -1144,13 +1148,11 @@ main {
   #info-alt {
     background: darken(white, 5%);
     flex-direction: column-reverse;
-    padding-bottom: 20px;
     #info-image-two {
       iframe {
         display: block;
-        height: 236px;
         margin: 0 auto;
-        width: 420px;
+        width: 560px;
       }
     }
   }
@@ -1160,446 +1162,448 @@ main {
     background: #444;
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-around;
     height: 600px;
     margin-top: -80px;
     padding-top: 80px;
     position: relative;
     z-index: 0;
-    #get-started-text {
-      width: 100%;
-      h2, #get-started-section {
-        text-align: center;
-      }
-      h2 {
-        color: darken(white, 10%);
-        margin-top: 0;
-        padding-top: 50px;
-      }
-      #get-started-section {
-        display: flex;
-        font-size: 125%;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        max-width: 450px;
-        padding-bottom: 50px;
-        .get-started-section-button {
-          background: rgba(255,255,255, 0.5);
-          border-radius: 5px;
+    .get-started-container {
+      #get-started-text {
+        width: 100%;
+        h2, #get-started-section {
+          text-align: center;
+        }
+        h2 {
           color: darken(white, 10%);
-          cursor: pointer;
-          margin: 0 5px;
-          padding: 10px;
+          margin-top: 0;
         }
-        .get-started-section-button:hover {
-          background: rgba(255,255,255, 0.3);
-          color: darken(white, 20%);
+        #get-started-section {
+          display: flex;
+          font-size: 125%;
+          justify-content: space-evenly;
+          margin: 0 auto;
+          max-width: 450px;
+          padding-bottom: 20px;
+          .get-started-section-button {
+            background: rgba(255,255,255, 0.5);
+            border-radius: 5px;
+            color: darken(white, 10%);
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 10px;
+          }
+          .get-started-section-button:hover {
+            background: rgba(255,255,255, 0.3);
+            color: darken(white, 20%);
+          }
         }
       }
-    }
-    #get-started-image {
-      align-items: center;
-      display: flex;
-      /************
-      * Wolverine *
-      ************/
-      .image-container {
+      #get-started-image {
         align-items: center;
         display: flex;
-        position: relative;
-        width: 360px;
-        height: 270px;
-        margin: 50px auto;
-      }
+        /************
+        * Wolverine *
+        ************/
+        .image-container {
+          height: 270px;
+          margin: 0 auto;
+          position: relative;
+          width: 360px;
+        }
 
-      #wolverine {
-        position: absolute;
-        width: 90%;
-        height: 90%;
-        top: 25%;
-      }
+        #wolverine {
+          position: absolute;
+          width: 90%;
+          height: 90%;
+          top: 25%;
+        }
 
-      #wolverine-body {
-        position: absolute;
-        width: 50%;
-        height: 40%;
-        top: 20%;
-        left: 30%;
-        background: #FFCE5A; /* for browsers that do not support gradients */
-        background: linear-gradient(#FFCE5A, #B56321);
-        border-radius: 10% 10% 50% 50%;
-        transform: rotate(30deg);
-      }
+        #wolverine-body {
+          position: absolute;
+          width: 50%;
+          height: 40%;
+          top: 20%;
+          left: 30%;
+          background: #FFCE5A; /* for browsers that do not support gradients */
+          background: linear-gradient(#FFCE5A, #B56321);
+          border-radius: 10% 10% 50% 50%;
+          transform: rotate(30deg);
+        }
 
-      #wolverine-body-copy {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #FFCE5A; /* for browsers that do not support gradients */
-        background: linear-gradient(#FFCE5A, #B56321);
-        border-radius: 10% 10% 50% 50% / 10% 10% 40% 40%;
-        z-index: 1;
-      }
+        #wolverine-body-copy {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #FFCE5A; /* for browsers that do not support gradients */
+          background: linear-gradient(#FFCE5A, #B56321);
+          border-radius: 10% 10% 50% 50% / 10% 10% 40% 40%;
+          z-index: 1;
+        }
 
-      #wolverine-body-copy:before {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        background: linear-gradient(to right, #10527B 25%, transparent 30%, transparent 50%, transparent 70%, #10527B 75%);
-        border-radius: inherit;
-      }
+        #wolverine-body-copy:before {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          content: '';
+          background: linear-gradient(to right, #10527B 25%, transparent 30%, transparent 50%, transparent 70%, #10527B 75%);
+          border-radius: inherit;
+        }
 
-      #wolverine-body-copy:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(white, transparent 5%);
-        box-shadow: 0px 2px 2px white;
-      }
+        #wolverine-body-copy:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          background: linear-gradient(white, transparent 5%);
+          box-shadow: 0px 2px 2px white;
+        }
 
-      #wolverine-head {
-        position: absolute;
-        width: 40%;
-        height: 90%;
-        top: -5%;
-        left: 30%;
-        border-radius: 50%;
-        background: #E6B58C;
-        z-index: 2;
-      }
+        #wolverine-head {
+          position: absolute;
+          width: 40%;
+          height: 90%;
+          top: -5%;
+          left: 30%;
+          border-radius: 50%;
+          background: #E6B58C;
+          z-index: 2;
+        }
 
-      #wolverine-head-copy {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: inherit;
-      }
+        #wolverine-head-copy {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          background: inherit;
+        }
 
-      #wolverine-mask {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(to top, transparent 50%, #FFB53A 50%);
-      }
+        #wolverine-mask {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          background: linear-gradient(to top, transparent 50%, #FFB53A 50%);
+        }
 
-      #wolverine-left-eye-cover, #wolverine-right-eye-cover {
-        position: absolute;
-        width: 60%;
-        height: 15%;
-        top: 40%;
-        background: #002131;
-      }
+        #wolverine-left-eye-cover, #wolverine-right-eye-cover {
+          position: absolute;
+          width: 60%;
+          height: 15%;
+          top: 40%;
+          background: #002131;
+        }
 
-      #wolverine-left-eye-cover {
-        left: -10%;
-        border-bottom-left-radius: 50%;
-        transform: rotate(25deg);
-      }
+        #wolverine-left-eye-cover {
+          left: -10%;
+          border-bottom-left-radius: 50%;
+          transform: rotate(25deg);
+        }
 
-      #wolverine-right-eye-cover {
-        right: -10%;
-        transform: rotateY(180deg) rotate(25deg);
-        border-bottom-left-radius: 50%;
-      }
+        #wolverine-right-eye-cover {
+          right: -10%;
+          transform: rotateY(180deg) rotate(25deg);
+          border-bottom-left-radius: 50%;
+        }
 
-      .wolverine-cover-tip {
-        position: absolute;
-        width: 20%;
-        height: 500%;
-        top: -150%;
-        left: 6%;
-        background: green; /* for broswers that do not support gradients */
-        background: linear-gradient(to right, #94CEEF, #1973AD, #002131 50%);
-        border-radius: 50%;
-        transform: rotate(-40deg);
-        
-        width: 10%;
-        left: 13%;
-        transform: rotate(-37deg);
-      }
+        .wolverine-cover-tip {
+          position: absolute;
+          width: 20%;
+          height: 500%;
+          top: -150%;
+          left: 6%;
+          background: green; /* for broswers that do not support gradients */
+          background: linear-gradient(to right, #94CEEF, #1973AD, #002131 50%);
+          border-radius: 50%;
+          transform: rotate(-40deg);
+          
+          width: 10%;
+          left: 13%;
+          transform: rotate(-37deg);
+        }
 
-      .wolverine-eye {
-        position: absolute;
-        width: 40%;
-        height: 30%;
-        top: 15%;
-        right: 15%;
-        background: white;
-        border-radius: 50% 50% 50% 50%;
-      }
+        .wolverine-eye {
+          position: absolute;
+          width: 40%;
+          height: 30%;
+          top: 15%;
+          right: 15%;
+          background: white;
+          border-radius: 50% 50% 50% 50%;
+        }
 
-      #wolverine-nose {
-        position: absolute;
-        width: 16%;
-        height: 21%;
-        top: 46%;
-        left: 42%;
-        background: #FFB53A;
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 50%;
-      }
+        #wolverine-nose {
+          position: absolute;
+          width: 16%;
+          height: 21%;
+          top: 46%;
+          left: 42%;
+          background: #FFB53A;
+          border-bottom-right-radius: 50%;
+          border-bottom-left-radius: 50%;
+        }
 
-      #wolverine-teeth {
-        position: absolute;
-        width: 40%;
-        height: 10%;
-        top: 75%;
-        left: 30%;
-        border-radius: 40%;
-        background: white;
-        z-index: 2;
-      }
+        #wolverine-teeth {
+          position: absolute;
+          width: 40%;
+          height: 10%;
+          top: 75%;
+          left: 30%;
+          border-radius: 40%;
+          background: white;
+          z-index: 2;
+        }
 
-      #wolverine-left-arm, #wolverine-right-arm {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        top: 10%;
-        background: #EFCEAD;
-        border-radius: 20% 0 0 20%;
-        z-index: 1;
-      }
+        #wolverine-left-arm, #wolverine-right-arm {
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          top: 10%;
+          background: #EFCEAD;
+          border-radius: 20% 0 0 20%;
+          z-index: 1;
+        }
 
-      #wolverine-left-arm {
-        left: -45%;
-        transform: rotate(-10deg);
-      }
+        #wolverine-left-arm {
+          left: -45%;
+          transform: rotate(-10deg);
+        }
 
-      #wolverine-right-arm {
-        right: -45%;
-        transform: rotateY(180deg) rotate(-10deg);
-      }
+        #wolverine-right-arm {
+          right: -45%;
+          transform: rotateY(180deg) rotate(-10deg);
+        }
 
-      #wolverine-left-arm:before, #wolverine-right-arm:before {
-        content: '';
-        position: absolute;
-        width: 20%;
-        height: 130%;
-        top: -14%;
-        right: -8%;
-        background: #10527B; /* for browsers that do not support gradients */
-        background: linear-gradient(white, #10527B 5%, black, #10527B);
-        transform: rotate(15deg);
-        z-index: 2;
-      }
+        #wolverine-left-arm:before, #wolverine-right-arm:before {
+          content: '';
+          position: absolute;
+          width: 20%;
+          height: 130%;
+          top: -14%;
+          right: -8%;
+          background: #10527B; /* for browsers that do not support gradients */
+          background: linear-gradient(white, #10527B 5%, black, #10527B);
+          transform: rotate(15deg);
+          z-index: 2;
+        }
 
-      #wolverine-left-arm:after, #wolverine-right-arm:after {
-        content: '';
-        position: absolute;
-        width: 20%;
-        height: 20%;
-        top: -15%;
-        right: -2%;
-        background: #212931;
-        border-top: 2px solid white;
-        border-radius: 50%;
-        transform: rotate(-15deg);
-      }
+        #wolverine-left-arm:after, #wolverine-right-arm:after {
+          content: '';
+          position: absolute;
+          width: 20%;
+          height: 20%;
+          top: -15%;
+          right: -2%;
+          background: #212931;
+          border-top: 2px solid white;
+          border-radius: 50%;
+          transform: rotate(-15deg);
+        }
 
-      #wolverine-left-arm-copy, #wolverine-right-arm-copy {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        border-radius: inherit;
-        z-index: 1;
-      }
+        #wolverine-left-arm-copy, #wolverine-right-arm-copy {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          border-radius: inherit;
+          z-index: 1;
+        }
 
-      .wolverine-hand {
-        position: absolute;
-        width: 60%;
-        height: 100%;
-        top: -5%;
-        left: -30%;
-        background: #73ADD6; /* for browsers that do not support gradients */
-        background: linear-gradient(to right, #73ADD6, black);
-        border-radius: 50%;
-        z-index: 1;
-      }
+        .wolverine-hand {
+          position: absolute;
+          width: 60%;
+          height: 100%;
+          top: -5%;
+          left: -30%;
+          background: #73ADD6; /* for browsers that do not support gradients */
+          background: linear-gradient(to right, #73ADD6, black);
+          border-radius: 50%;
+          z-index: 1;
+        }
 
-      .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index, .wolverine-palm, .wolverine-thumb, .wolverine-thumb-tip {
-        position: absolute;
-        width: 28%;
-        background: #217BB5; /* for browsers that do not support gradients */
-        background: radial-gradient(#217BB5, #104A6B);
-        border-radius: 30%;
-      }
+        .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index, .wolverine-palm, .wolverine-thumb, .wolverine-thumb-tip {
+          position: absolute;
+          width: 28%;
+          background: #217BB5; /* for browsers that do not support gradients */
+          background: radial-gradient(#217BB5, #104A6B);
+          border-radius: 30%;
+        }
 
-      .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index {
-        transform: rotate(-20deg);
-        z-index: 1;
-      }
+        .wolverine-pinky, .wolverine-ring, .wolverine-middle, .wolverine-index {
+          transform: rotate(-20deg);
+          z-index: 1;
+        }
 
-      .wolverine-pinky {
-        height: 75%;
-        top: 15%;
-        left: -10%;
-      }
+        .wolverine-pinky {
+          height: 75%;
+          top: 15%;
+          left: -10%;
+        }
 
-      .wolverine-ring {
-        height: 78%;
-        top: 1%;
-        left: 10%;
-      }
+        .wolverine-ring {
+          height: 78%;
+          top: 1%;
+          left: 10%;
+        }
 
-      .wolverine-middle {
-        height: 80%;
-        top: -12%;
-        left: 31%;
-      }
+        .wolverine-middle {
+          height: 80%;
+          top: -12%;
+          left: 31%;
+        }
 
-      .wolverine-index {
-        height: 73%;
-        top: -15%;
-        left: 54%;
-      }
+        .wolverine-index {
+          height: 73%;
+          top: -15%;
+          left: 54%;
+        }
 
-      .wolverine-palm {
-        height: 73%;
-        top: -25%;
-        left: 70%;
-        transform: rotate(-55deg);
-      }
+        .wolverine-palm {
+          height: 73%;
+          top: -25%;
+          left: 70%;
+          transform: rotate(-55deg);
+        }
 
-      .wolverine-thumb {
-        height: 50%;
-        top: 15%;
-        left: 83%;
-        transform: rotate(35deg);
-        z-index: 1;
-      }
+        .wolverine-thumb {
+          height: 50%;
+          top: 15%;
+          left: 83%;
+          transform: rotate(35deg);
+          z-index: 1;
+        }
 
-      .wolverine-thumb-tip {
-        height: 50%;
-        top: 37%;
-        left: 55%;
-        transform: rotate(65deg);
-        z-index: 2;
-      }
+        .wolverine-thumb-tip {
+          height: 50%;
+          top: 37%;
+          left: 55%;
+          transform: rotate(65deg);
+          z-index: 2;
+        }
 
-      .wolverine-thumb-tip:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 30%;
-        top: -5%;
-        left: -5%;
-        background: #217BB5; /* for browsers that do not support gradients */
-        background: linear-gradient(to right, #104A6B, #217BB5 40%, #104A6B 95%);
-        border-radius: 30%;
-        transform: rotate(-20deg);
-      }
+        .wolverine-thumb-tip:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 30%;
+          top: -5%;
+          left: -5%;
+          background: #217BB5; /* for browsers that do not support gradients */
+          background: linear-gradient(to right, #104A6B, #217BB5 40%, #104A6B 95%);
+          border-radius: 30%;
+          transform: rotate(-20deg);
+        }
 
-      .wolverine-outer-blade, .wolverine-middle-blade, .wolverine-inner-blade {
-        position: absolute;
-        height: 40%;
-        border-top: 10px solid #E6EFE6;
-        border-radius: 50%;
-      }
+        .wolverine-outer-blade, .wolverine-middle-blade, .wolverine-inner-blade {
+          position: absolute;
+          height: 40%;
+          border-top: 10px solid #E6EFE6;
+          border-radius: 50%;
+        }
 
-      .wolverine-outer-blade {
-        width: 100%;
-        top: 12%;
-        left: -85%;
-        transform: rotate(-20deg) rotateY(-15deg);
-      }
+        .wolverine-outer-blade {
+          width: 100%;
+          top: 12%;
+          left: -85%;
+          transform: rotate(-20deg) rotateY(-15deg);
+        }
 
-      .wolverine-middle-blade {
-        width: 200%;
-        height: 70%;
-        top: -12%;
-        left: -120%;
-        transform: rotateY(45deg);
-      }
+        .wolverine-middle-blade {
+          width: 200%;
+          height: 70%;
+          top: -12%;
+          left: -120%;
+          transform: rotateY(45deg);
+        }
 
-      .wolverine-inner-blade {
-        width: 80%;
-        height: 50%;
-        top: -35%;
-        left: -25%;
-        transform: rotate(20deg) rotateY(-30deg);
-      }
-        
-      #wolverine-leg {
-        position: absolute;
-        width: 30%;
-        height: 100%;
-        top: 80%;
-        left: 50%;
-        background: #FFCE5A; /* for browsers that do not support gradients */
-        background: radial-gradient(#FFCE5A, #B56321);
-        border-radius: 0 0 30% 30%;
-        box-shadow: 0px 2px 5px white;
-        z-index: 0;
-      }
+        .wolverine-inner-blade {
+          width: 80%;
+          height: 50%;
+          top: -35%;
+          left: -25%;
+          transform: rotate(20deg) rotateY(-30deg);
+        }
+          
+        #wolverine-leg {
+          position: absolute;
+          width: 30%;
+          height: 100%;
+          top: 80%;
+          left: 50%;
+          background: #FFCE5A; /* for browsers that do not support gradients */
+          background: radial-gradient(#FFCE5A, #B56321);
+          border-radius: 0 0 30% 30%;
+          box-shadow: 0px 2px 5px white;
+          z-index: 0;
+        }
 
-      #wolverine-leg:after {
-        content: '';
-        position: absolute;
-        width: 70%;
-        height: 70%;
-        left: 30%;
-        background: linear-gradient(to top right, transparent 45%, #10527B 60%);
-      }
+        #wolverine-leg:after {
+          content: '';
+          position: absolute;
+          width: 70%;
+          height: 70%;
+          left: 30%;
+          background: linear-gradient(to top right, transparent 45%, #10527B 60%);
+        }
 
-      #wolverine-foot {
-        position: absolute;
-        width: 12%;
-        height: 35%;
-        top: -35%;
-        left: 38%;
-        background: #10527B; /* for broswers without gradient support */
-        background: linear-gradient(to right, #D6EFF7, #10528B, #10528B, #D6EFF7);
-        border-radius: 50% 50% 0 0 / 10% 10% 0 0;
-      }
+        #wolverine-foot {
+          position: absolute;
+          width: 12%;
+          height: 35%;
+          top: -35%;
+          left: 38%;
+          background: #10527B; /* for broswers without gradient support */
+          background: linear-gradient(to right, #D6EFF7, #10528B, #10528B, #D6EFF7);
+          border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+        }
 
-      #wolverine-foot:before, #wolverine-foot:after {
-        content: '';
-        position: absolute;
-        width: 5%;
-        height: 90%;
-        top: 10%;
-        background: #425263;
-        border-top-left-radius: inherit;
-      }
+        #wolverine-foot:before, #wolverine-foot:after {
+          content: '';
+          position: absolute;
+          width: 5%;
+          height: 90%;
+          top: 10%;
+          background: #425263;
+          border-top-left-radius: inherit;
+        }
 
-      #wolverine-foot:before {
-        left: 35%;
-      }
+        #wolverine-foot:before {
+          left: 35%;
+        }
 
-      #wolverine-foot:after {
-        right: 35%;
-      }
+        #wolverine-foot:after {
+          right: 35%;
+        }
 
-      #wolverine-heel-overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 10%;
-        border-top: 2px solid #425263;
-        border-radius: inherit;
-      }
+        #wolverine-heel-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 10%;
+          border-top: 2px solid #425263;
+          border-radius: inherit;
+        }
 
-      #wolverine-shoe {
-        position: absolute;
-        width: 10%;
-        height: 33%;
-        top: 140%;
-        left: 72%;
-        background: #10527B;
-        border-radius: 0 30% 50% 0;
-        z-index: -1;
-      }
+        #wolverine-shoe {
+          position: absolute;
+          width: 10%;
+          height: 33%;
+          top: 140%;
+          left: 72%;
+          background: #10527B;
+          border-radius: 0 30% 50% 0;
+          z-index: -1;
+        }
+      }  
     }
   }
 }
 
 footer {
   background: darken(white, 5%);
+  font-size: 125%;
+  text-align: center;
   #footer-contents {
     display: flex;
     flex-direction: column-reverse;
@@ -1683,6 +1687,7 @@ footer {
 
 @media only screen and (min-width: 550px) {
   footer {
+    font-size: 100%;
     #footer-contents {
       #footer-left, #footer-menus {
         flex-direction: row;
@@ -1736,10 +1741,6 @@ footer {
               width: 480px;
             }
           }
-          iframe {
-            height: 236px;
-            width: 420px;
-          }
         }
       }
     }
@@ -1749,6 +1750,7 @@ footer {
   }
 
   footer {
+    text-align: left;
     #footer-contents {
       flex-direction: row;
       #footer-left {
